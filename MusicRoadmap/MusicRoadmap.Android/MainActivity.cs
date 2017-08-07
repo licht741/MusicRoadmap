@@ -6,6 +6,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.IO;
+using SQLite.Net;
+using SQLite.Net.Platform.XamarinAndroid;
+using MusicRoadmap.Repositories;
 
 namespace MusicRoadmap.Droid
 {
@@ -20,8 +24,10 @@ namespace MusicRoadmap.Droid
 
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
-		}
-	}
+
+
+        }
+    }
 }
 
 
