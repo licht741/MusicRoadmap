@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:orientation="vertical">
+
+    <Space
+      android:layout_width="match_parent"
+      android:layout_height="20dp"/>
+
+    <Mvx.MvxImageView
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:scaleType="fitXY"
+      local:MvxBind="ImageUrl Image"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:textSize="32dp"
+        local:MvxBind="Text Name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        local:MvxBind="Text Summary"
+        android:textSize="16sp"/>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="#dddddd"
+      android:textSize="14sp"
+      android:layout_marginTop="10dp"
+      android:layout_marginRight="5dp"
+      android:layout_gravity="right"
+      local:MvxBind="Text Published"/>
+
+    <Space
+      android:layout_width="match_parent"
+      android:layout_height="100dp"/>
+    
+  </LinearLayout>
+</ScrollView>

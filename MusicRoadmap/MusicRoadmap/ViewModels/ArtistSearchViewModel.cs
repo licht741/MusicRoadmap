@@ -1,5 +1,6 @@
 ﻿using MusicRoadmap.Model;
 using MusicRoadmap.Services;
+using MusicRoadmap.ViewModels;
 using MvvmCross.Core.ViewModels;
 using System.Collections.Generic;
 using System.Windows.Input;
@@ -10,12 +11,21 @@ namespace MusicRoadmap.Core
     {
         readonly IMusicService _calculation;
 
-        public ICommand NavBack
+        //public ICommand NavBack
+        //{
+        //    get
+        //    {
+        //        return new MvxCommand(() => Close(this));
+        //    }
+        //}
+
+        public class Nav
         {
-            get
-            {
-                return new MvxCommand(() => Close(this));
-            }
+        }
+
+        public void Init(Nav navigation)
+        {
+            
         }
 
         MvxObservableCollection<Artist> artists;
@@ -63,5 +73,36 @@ namespace MusicRoadmap.Core
         {
             Artists = new MvxObservableCollection<Artist>(_calculation.GetArtists(SearchString).Result);
         }
+    
+
+    private MvxCommand<ArtistSearchViewModel> _memoryClickedCommand = null;
+    public ICommand MemoryClickedCommand
+        {
+            get
+            {
+                return new MvxCommand<Artist>(item =>
+                {
+                    ShowViewModel<ArtistDetailsViewModel>(new ArtistDetailsViewModel.Nav() { Id = item.mbid });
+                });
+
+                //if (_memoryClickedCommand == null)
+                //    _memoryClickedCommand = new MvxCommand<ArtistSearchViewModel>(artist =>
+                //    {
+                        
+                //    });
+
+                //return _memoryClickedCommand;
+
+                //return _memoryClickedCommand = _memoryClickedCommand ?? new MvxCommand<ArtistSearchViewModel>(memory => {
+                //    int tmp = 0;
+                //    });
+            }
+
+            set
+            {
+                _memoryClickedCommand = value as MvxCommand<ArtistSearchViewModel>;
+            }
+        }
+
     }
 }

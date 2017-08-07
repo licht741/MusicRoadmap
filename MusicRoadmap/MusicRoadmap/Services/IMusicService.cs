@@ -7,5 +7,6 @@ namespace MusicRoadmap.Services
     public interface IMusicService
     {
         Task<List<Artist>> GetArtists(string artist);
+        Task<ArtistDetails> GetArtistDetails(string mbid);
     }
 }

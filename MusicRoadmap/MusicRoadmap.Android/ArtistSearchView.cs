@@ -3,7 +3,7 @@ using MvvmCross.Droid.Views;
 
 namespace MusicRoadmap.Droid
 {
-    [Activity(Label = "Music Roadmap", NoHistory = true, MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Music Roadmap", NoHistory = false, MainLauncher = true, Icon = "@drawable/icon")]
     public class ArtistSearchView : MvxActivity
     {
         /// <summary>
